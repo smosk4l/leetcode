@@ -8,9 +8,6 @@ const arrayStringsAreEqual = function (word1, word2) {
   for (let i = 0; i < word2.length; i++) {
     str2 += word2[i];
   }
-  if (str1 === str2) {
-    return true;
-  } else {
-    return false;
-  }
+  if (!(str1 === str2)) return false;
+  return true;
 };
