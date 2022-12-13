@@ -4,5 +4,3 @@ const targetIndices = function (nums, target) {
     .map((num, index) => (num === target ? index : undefined))
     .filter((notUndefined) => notUndefined !== undefined);
 };
-
-console.log(targetIndices([1, 2, 5, 2, 3], 2));
