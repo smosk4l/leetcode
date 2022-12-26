@@ -1,15 +1,13 @@
 const fizzBuzz = function (n) {
   const numbers = [];
+
   for (let i = 1; i <= n; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      numbers.push("FizzBuzz");
-    } else if (i % 3 === 0) {
-      numbers.push("Fizz");
-    } else if (i % 5 === 0) {
-      numbers.push("Buzz");
-    } else {
-      numbers.push(String(i));
-    }
+    let str = "";
+    if (i % 3 === 0) str += "Fizz";
+    if (i % 5 === 0) str += "Buzz";
+
+    str === "" ? numbers.push(String(i)) : numbers.push(str);
   }
+
   return numbers;
 };
