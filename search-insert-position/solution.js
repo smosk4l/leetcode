@@ -1,18 +1,12 @@
 const searchInsert = function (nums, target) {
-  if (!nums.includes(target)) {
-    nums.push(target);
-    return nums.sort((a, b) => a - b).findIndex((num) => num === target);
+  let low = 0;
+  let high = nums.length - 1;
+
+  while (low <= high) {
+    const middle = Math.floor((low + high) / 2);
+    if (nums[middle] === target) return middle;
+    if (nums[middle] < target) low = middle + 1;
+    if (nums[middle] > target) high = middle - 1;
   }
-
-  let isSearching = true;
-  let middle = Math.floor(nums.length / 2);
-
-  while (isSearching) {
-    if (nums[middle] === target) {
-      isSearching = false;
-      return middle;
-    }
-
-    nums[middle] > target ? middle-- : middle++;
-  }
+  return low;
 };
