@@ -1,5 +1,14 @@
 const isPalindrome = function (x) {
-  return x === Number(x.toString().split("").reverse().join(""));
-};
+  if (x < 0) return false;
 
-console.log(isPalindrome(121));
+  const xStr = String(x);
+  let left = 0;
+  let right = xStr.length - 1;
+
+  while (left < right) {
+    if (xStr[left] !== xStr[right]) return false;
+    left++;
+    right--;
+  }
+  return true;
+};
