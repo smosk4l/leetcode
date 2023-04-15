@@ -8,15 +8,8 @@ const romanToInt = function (s) {
     C: 100,
     D: 500,
     M: 1000,
-    IV: 4,
-    IX: 9,
-    XL: 40,
-    XC: 90,
-    CD: 400,
-    CM: 900,
   };
-  const strCopy = s.slice();
-  const letters = strCopy.split("");
+  const letters = s.split("");
 
   for (let i = 0; i < letters.length; i++) {
     const num = romansToNumber[letters[i]];
@@ -27,7 +20,3 @@ const romanToInt = function (s) {
   }
   return counter;
 };
-
-console.log(romanToInt("III"));
-// console.log(romanToInt("IX"));
-// console.log(romanToInt("MCMXCIV"));
